@@ -1,0 +1,30 @@
+FORGE
+  remote: http://forge.puppetlabs.com
+  specs:
+    puppetlabs/apache (0.4.0)
+      puppetlabs/firewall (>= 0.0.4)
+      puppetlabs/stdlib (>= 2.2.1)
+    puppetlabs/apt (1.0.1)
+      puppetlabs/stdlib (>= 2.2.1)
+    puppetlabs/firewall (0.0.4)
+    puppetlabs/ntp (0.1.0)
+      puppetlabs/stdlib (>= 0.1.6)
+    puppetlabs/stdlib (3.1.1)
+    saz/sudo (2.0.9)
+
+GIT
+  remote: https://github.com/blt04/puppet-rvm
+  ref: master
+  sha: 5968ce475c5441c34ab8e727e4f0e51bc78c8108
+  specs:
+    rvm (1.0.0)
+
+DEPENDENCIES
+  puppetlabs/apache (>= 0)
+  puppetlabs/apt (>= 0)
+  puppetlabs/firewall (>= 0)
+  puppetlabs/ntp (>= 0)
+  puppetlabs/stdlib (>= 0)
+  rvm (>= 0)
+  saz/sudo (>= 0)
+
