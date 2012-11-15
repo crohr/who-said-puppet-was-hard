@@ -1,19 +1,17 @@
-set :rvm_ruby_string, '1.9.3-p286'
-set :rvm_type, :system
-
-require "rvm/capistrano"
 require "bundler/capistrano"
 
 set :application, "who-said-puppet-was-hard"
-set :repository,  ""
-
-role :web, "who-said-puppet-was-hard"
-role :app, "who-said-puppet-was-hard"                          # This may be the same as your `Web` server
-role :db,  "who-said-puppet-was-hard", :primary => true # This is where Rails migrations will run
+set :repository,  "https://github.com/crohr/#{application}.git"
 
 set :user, ENV.fetch('REMOTE_USER') { 'deploy' }
 set :use_sudo, false
 set :deploy_to, "/home/#{user}/apps/#{application}"
+
+set :default_environment, {
+  'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
+}
+
+set :bundle_flags, "--deployment --binstubs --shebang ruby-local-exec"
 
 namespace :deploy do
   task :start do ; end

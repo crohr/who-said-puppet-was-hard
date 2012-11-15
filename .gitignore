@@ -16,4 +16,5 @@ bin/
 /tmp
 .tmp/
 modules/
+.librarian
 modules.tar.gz
